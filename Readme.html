@@ -139,7 +139,7 @@ $(document).ready(function () {
 <p>We generated figures and estimated regression models using R, which is available to download for free at <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>. We recommend using RStudio as an IDE. RStudio is available to download for free at <a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a> and one of its advantage is its ability to use an <em>R Project</em> which facilitates setting working directories and organizing files. Using RStudio, we recommend to first open the project file <code>Data and code.RProj</code>. Opening this file sets the working directory so that all code should run without issues related to file location.</p>
 <p>The R files to replicate the results in the paper are in the main folder. There are four subfolders to help organize other files.</p>
 <ul>
-<li>Data: This subfolder contains the data. The file <code>SP-off-RP data.rds</code> contains the data in R format, and is the file data that is called by other files. The subfolder also contain the excel <code>SP-off-RP data.xlsx</code> for users interested in reading the data in a different format.</li>
+<li>Data: This subfolder contains the data. The file <code>SP-off-RP data.rds</code> contains the data in R format, and is the file data that is called by other code files. The subfolder also contain the excel <code>SP-off-RP data.xlsx</code> for users interested in reading the data in a different format.</li>
 <li>Figures: Figures are saved as <code>.png</code> files in this subfolder.</li>
 <li>Results: Estimation results are saved in this subfolder as excel file. Results are also saved as <code>.RData</code> file for later use.</li>
 <li>Code: This subfolder contains R files that are sourced by other files. These R files contain functions to estimate models and produce figures. We describe these files in a section below.</li>
@@ -155,23 +155,38 @@ $(document).ready(function () {
 <div id="file-1-simulations.r" class="section level3">
 <h3>File <code>1) Simulations.R</code></h3>
 <p>This file performs simulations and produces Figure 1 that shows the self-selection self-selection in our survey. The figure is saved in the Figures subfolder. The simulations do not use the data we collected.</p>
+<p>```{r simulations, include = FALSE, echo = FALSE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“1) Simulations.R”)</p>
+<p>```</p>
 </div>
 <div id="file-2-summary.r" class="section level3">
 <h3>File <code>2) Summary.R</code></h3>
 <p>This file prepares data summary that we show in Tables 1, 2, and 3. The data summaries are not saved into excel files but rather displayed in the console.</p>
 <p>The file also produces Figures D.1 and D.2 in appendix, saved in the Figures subfolder.</p>
+<p>```{r summary, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“2) Summary.R”)</p>
+<p>```</p>
 </div>
 <div id="file-3-figures.r" class="section level3">
 <h3>File <code>3) Figures.R</code></h3>
 <p>This file generates Figures 2 and 3, saved in the Figures subfolder. It also includes additional code to generate alternative figures for the premium for E85 (i.e. price difference between E85 and E10).</p>
+<p>```{r figures, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“3) Figures.R”)</p>
+<p>```</p>
 </div>
 <div id="file-4-regressions-ratio.r" class="section level3">
 <h3>File <code>4) Regressions ~ ratio.R</code></h3>
 <p>This is the file that generates the main results in the paper. It produces the results we show in Tables 4, 5, and 6. The file must be run twice, selecting either for 479 or 670 observations on lines 50 and 51. The file sources functions from the files <code>func_logit_solver_deltamethod.R</code> and <code>Func_SP_WMLE_logit.R</code> in the Code subfolder. The tables of results are saved in the Results subfolder.</p>
+<p>```{r regressions, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“4) Regressions ~ ratio.R”)</p>
+<p>```</p>
 </div>
 <div id="file-5-graph-demand-curves.r" class="section level3">
 <h3>File <code>5) Graph demand curves.R</code></h3>
 <p>This file uses regression results to produce Figure 4, saved in the Figures subfolder. The R code sources functions from the file <code>Demand graph func.R</code> in the Code subfolder.</p>
+<p>```{r demand, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“5) Graph demand curves.R”)</p>
+<p>```</p>
 </div>
 </div>
 <div id="r-files-to-replicate-results-in-appendix" class="section level2">
@@ -180,18 +195,30 @@ $(document).ready(function () {
 <div id="file-b-summary.r" class="section level3">
 <h3>File <code>B) Summary.R</code></h3>
 <p>This file produces the data summaries in appendix Tables B.1, B.2 and B.3.</p>
+<p>```{r summaryB, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“B) Summary.R”)</p>
+<p>```</p>
 </div>
 <div id="file-c-regressions-premium.r" class="section level3">
 <h3>File <code>C) Regressions ~ premium.R</code></h3>
 <p>This file produces appendix Tables C.1 and C.2 that consider alternative regression models where motorists make their fueling decisions based on the premium for E85. The file must be run twice, selecting for 479 or 670 observations on lines 50 and 51.</p>
+<p>```{r regpremium, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“C) Regressions ~ premium.R”)</p>
+<p>```</p>
 </div>
 <div id="file-c-graphs-of-demand-curve-premium.r" class="section level3">
 <h3>File <code>C) Graphs of demand curve ~ premium.R</code></h3>
 <p>This file uses regression results for the premium model to produce Figure C.a, saved in the Figures subfolder. The R code sources functions from the file <code>Demand graph func.R</code> in the Code subfolder.</p>
+<p>```{r figpremium, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“C) Graphs of demand curve ~ premium.R”)</p>
+<p>```</p>
 </div>
 <div id="file-e-regressions-station-fixed-effect.r" class="section level3">
 <h3>File <code>E) Regressions ~ station fixed effect.R</code></h3>
 <p>This file estimate regression models where we use station fixed effects instead of state fixed effects. It produces appendix Tables E.1 and E.2. The file also produces tables for the estimated coefficients that are not shown in the appendix. The file must be run twice, selecting for 479 or 670 observations on lines 50 and 51.</p>
+<p>```{r regfixed, include = FALSE, echo = TRUE, eval = FALSE, results=‘asis’, message = FALSE, warning = FALSE}</p>
+<p>source(“E) Regressions ~ station fixed effect.R”)</p>
+<p>```</p>
 </div>
 </div>
 <div id="r-files-in-the-code-subfolder" class="section level2">
