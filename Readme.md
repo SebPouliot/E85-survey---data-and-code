@@ -1,24 +1,3 @@
----
-title: Data and code addendum
-author:
-- Sebastien Pouliot
-- Kenneth Liao
-- Bruce Babcock
-date: "April 15, 2018"
-output:
-  html_document:
-    df_print: paged
-  pdf_document: default
-institute:
-- Iowa State University
-- Farmingdale
-- University of California, Riverside
-fontsize: 12pt
-subparagraph: yes
-subtitle: Estimating Willingness to Pay for E85 in the United States Using an Intercept Survey of Flex Motorists
-documentclass: article
-urlcolor: blue
----
 
 This document explain the code to replicate the results in *Estimating Willingness to Pay for E85 in the United States Using an Intercept Survey of Flex Motorists* published in the *American Journal of Agricultural Economics*. The article provide the necessary information about data collection and thus we will not describe them in this document.   
 
