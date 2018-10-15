@@ -1,5 +1,5 @@
 
-This document explain the code to replicate the results in *Estimating Willingness to Pay for E85 in the United States Using an Intercept Survey of Flex Motorists* published in the *American Journal of Agricultural Economics*. The article provide the necessary information about data collection and thus we will not describe them in this document.   
+This document explains the code to replicate the results in *Estimating Willingness to Pay for E85 in the United States Using an Intercept Survey of Flex Motorists* published in the *American Journal of Agricultural Economics*. The article provide the necessary information about data collection and thus we will not describe them in this document.   
 
 ## Software requirements and folder structure 
 We generated figures and estimated regression models using R, which is available to download for free at <https://cran.r-project.org/>. We recommend using RStudio as an IDE. RStudio is available to download for free at <https://www.rstudio.com/> and one of its advantage is its ability to use an *R Project* which facilitates setting working directories and organizing files. Using RStudio, we recommend to first open the project file `Data and code.RProj`. Opening this file sets the working directory so that all code should run without issues related to file location.
